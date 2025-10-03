@@ -3,7 +3,7 @@
 This repository provides the **`h1_2_walk2`** task to be run inside
 [DeepMind’s MuJoCo MPC](https://github.com/google-deepmind/mujoco_mpc).
 
-Follow the steps below **in order**. After step 6 you can build and run the
+Follow the steps below **in order**. After step 5 you can build and run the
 MuJoCo MPC app and select the `h1_2_walk2` task.
 
 ---
