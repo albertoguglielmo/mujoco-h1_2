@@ -21,21 +21,6 @@ MuJoCo MPC app and select the `h1_2_walk2` task.
 
 Copy this repository’s `h1_2_walk2` folder into the MuJoCo MPC tasks directory:
 
-```bash
-cp -r h1_2_walk2 /path/to/mujoco_mpc/mjpc/tasks/
-```
-
-After this, you should have:
-```
-/path/to/mujoco_mpc/mjpc/tasks/h1_2_walk2
-├── h1_2.xml
-├── h1_2_walk.cc
-├── h1_2_walk.h
-├── h1_2_functions.cc
-├── h1_2_functions.h
-└── meshes/
-```
-
 ---
 
 ## 2) Update CMake in `mjpc/tasks`
@@ -58,11 +43,6 @@ COMMAND ${CMAKE_COMMAND} -E copy
 COMMAND ${CMAKE_COMMAND} -E copy_directory
         ${CMAKE_CURRENT_SOURCE_DIR}/h1_2_walk2/meshes
         ${CMAKE_CURRENT_BINARY_DIR}/h1_2_walk2/meshes
-```
-
-> If your task uses additional assets, add similar `copy` lines for them.
-
----
 
 ## 3) Register the task in `tasks.cc`
 
@@ -101,39 +81,11 @@ tasks/h1_2_walk2/h1_2_functions.cc
 tasks/h1_2_walk2/h1_2_functions.h
 ```
 
-(Keep the same style used for the other tasks in that file—e.g., add `.cc` to the
-sources list and `.h` to the headers list if the project separates them.)
 
----
-
-## 5) Re-configure and build MuJoCo MPC
-
-From your MuJoCo MPC build directory:
-
-```bash
-cd /path/to/mujoco_mpc/build
-cmake ..          # reconfigure so the new task is picked up
-make -j$(nproc)   # or: cmake --build . --parallel
-```
-
-If CMake reports missing files, re-check you added the paths in steps 2–4.
-
----
-
-## 6) Run and select the task
+## 5) Re-configure build and Run MuJoCo MPC
 
 Launch the MuJoCo MPC binary (GUI or CLI as provided by the project).
 Then **select the `h1_2_walk2` task** from the task list (or via the project’s
-`--task` flag if supported).
+`--task` flag).
 
-That’s it — the `h1_2_walk2` task should now run inside MuJoCo MPC.
 
----
-
-## Troubleshooting
-
-- **Headers not found / linker errors**: re-check step **4** (all four files from
-  `h1_2_walk2` must be added to `mjpc/CMakeLists.txt`).
-- **Assets not found at runtime**: re-check step **2** (the copy commands must
-  copy `h1_2.xml` and the entire `meshes/` directory into the build tree).
-- **Task not visible in UI**: re-check step **3** (include + registration line).
