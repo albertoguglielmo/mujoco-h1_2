@@ -1,0 +1,15 @@
+import math
+
+N = 45
+r = 2.85/2
+half_x = 2.5
+half_y = 0.05
+half_z = 0.1
+
+for i in range(N):
+    theta = 2 * math.pi * i / N
+    y = r * math.cos(theta)
+    z = r * math.sin(theta)
+    print(f'<geom type="box" size="{half_x} {half_y} {half_z}" '
+          f'pos="0 {y:.3f} {z:.3f}" euler="{theta:.1f} 0 0 " '
+          f'material="white" contype="1" conaffinity="1"/>')
