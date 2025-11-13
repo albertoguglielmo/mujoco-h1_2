@@ -1,0 +1,38 @@
+VALORI PER IMPLEMENTARE LA CAMMNAITA BASE 
+        
+         "Height" dim="1" user="7 5.0 0 25.0 0.1 4.0" />
+         "Pelvis/Feet" dim="1" user="8 1.0 0.0 10.0 0.05" />
+         "Balance" dim="2" user="1 5.0 0.0 25.0 0.02 4.0" />
+         "Upright" dim="8" user="2 5.0 0.0 25.0 0.01" />
+         "Posture" dim="27" user="0 0.025 0 1.0" />
+         "Face Forward" dim="2" user="7 1.0 0.0 25.0 0.5 3.0" />
+         "Walk" dim="1" user="7 2.0 0.0 25.0 0.5 3.0" />  <!-- valore 1  -->
+         "Velocity" dim="2" user="7 0.625 0 25.0 0.2 4.0" />
+         "Control" dim="27" user="3 0.1 0 1.0 0.3" />
+         "clearance" dim="1" user="8 1.0 0.0 10.0 0.05" />
+         "Feet Distance" dim="1" user="7 5.5 0 25.0 0.1 4.0" /> 
+
+        <numeric name="residual_Torso" data="1.25 0 1.7" />
+        <numeric name="residual_Speed" data="1.0 0.0 5.0" />
+        <numeric name="residual_direction" data="0 -180 180" />
+        <numeric name="residual_FeetDistance" data="0.4 0.0 1.0" />
+        <numeric name="residual_clearance" data="0.25 0 1.7" />
+
+        "agent_horizon" data="0.35"
+
+VALORI PER SUPERARE L'OSTACOLO
+
+        SAMPLING 
+        "clearance"  1.5 
+        "Feet Distance" 0.5 
+        "residual_clearance" 0.4
+        "agent_horizon"  0.685
+
+VALORI PER TERRENI DISSESTATI
+
+        SAMPLING 
+        "clearance"  0
+        "Balance" 11
+        "residual_Torso" + ALTEZZA PAVIMENTO 
+        "agent_horizon"  0.685
+        
