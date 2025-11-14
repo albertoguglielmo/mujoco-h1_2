@@ -45,7 +45,7 @@ std::string H1_2_integrated_Task::Name() const { return "h1_2_integrated"; }
 //      Residual(7): velocity
 //      Residual(8): control
 //      Residual(9): foot clearance
-//      Residual(10): feet distance (2D)
+//      Residual(10): feet distance (3D)
 //      Residual(11): knee
 //   Number of parameters:
 //      Parameter(0): torso height goal
@@ -216,11 +216,11 @@ void H1_2_integrated_Task::ResidualFn::Residual(const mjModel *model, const mjDa
     residual[counter++] = abs(desired_clearance -fabs((foot_left[2]) - (foot_right[2])))+ abs(desired_clearance -(foot_left[2]) - (foot_right[2]));  }
 
 
-    // ----- feet distance (2D) ----- //
+    // ----- feet distance (3D) ----- //
     double feet_axis[3];
     mju_copy(feet_axis, foot_right, 3);
     mju_addToScl(feet_axis, foot_left, -1, 3);
-    double feet_distance = mju_norm(feet_axis, 2);
+    double feet_distance = mju_norm(feet_axis, 3);
     residual[counter++] = feet_distance - feet_distance_goal;
 
     // ----- knee ----- //
