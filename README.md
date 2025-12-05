@@ -74,10 +74,16 @@ Open:
 Add these files to the appropriate source lists so they are compiled:
 
 ```
-tasks/h1_2_walk2/h1_2_walk.cc
-tasks/h1_2_walk2/h1_2_walk.h
-tasks/h1_2_walk2/h1_2_functions.cc
-tasks/h1_2_walk2/h1_2_functions.h
+  tasks/h1_2/walk/h1_2_walk.cc   # da me
+  tasks/h1_2/walk/h1_2_walk.h    # da me
+
+  tasks/h1_2/obstacle/h1_2_obstacle.cc   # da me
+  tasks/h1_2/obstacle/h1_2_obstacle.h    # da me
+
+  tasks/h1_2/integrated/h1_2_integrated.cc   # da me
+  tasks/h1_2/integrated/h1_2_integrated.h    # da me
+tasks/h1_2_functions.cc
+tasks/h1_2_functions.h
 ```
 
 
