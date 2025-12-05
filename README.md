@@ -42,7 +42,7 @@ for the task are copied into the build tree:
   COMMAND ${CMAKE_COMMAND} -E copy_directory
           ${CMAKE_CURRENT_SOURCE_DIR}/h1_2/meshes
           ${CMAKE_CURRENT_BINARY_DIR}/h1_2/meshes
-
+```
 ## 3) Register the task in `tasks.cc`
 
 Open:
@@ -52,12 +52,16 @@ Open:
 
 - Add the include near the other task includes:
 ```cpp
-#include "mjpc/tasks/h1_2_walk2/h1_2_walk.h"
+#include "mjpc/tasks/h1_2/walk/h1_2_walk.h"
+#include "mjpc/tasks/h1_2/obstacle/h1_2_obstacle.h"
+#include "mjpc/tasks/h1_2/integrated/h1_2_integrated.h" 
 ```
 
 - Add the task to the list where tasks are registered/returned:
 ```cpp
-std::make_shared<H1_2_walk_Task2>(),
+      std::make_shared<H1_2_walk>(),  
+      std::make_shared<H1_2_obstacle_Task>(), 
+      std::make_shared<H1_2_integrated_Task>(), 
 ```
 
 (Place it alongside the other `std::make_shared<...>()` entries.)
@@ -76,10 +80,8 @@ Add these files to the appropriate source lists so they are compiled:
 ```
   tasks/h1_2/walk/h1_2_walk.cc   # da me
   tasks/h1_2/walk/h1_2_walk.h    # da me
-
   tasks/h1_2/obstacle/h1_2_obstacle.cc   # da me
   tasks/h1_2/obstacle/h1_2_obstacle.h    # da me
-
   tasks/h1_2/integrated/h1_2_integrated.cc   # da me
   tasks/h1_2/integrated/h1_2_integrated.h    # da me
 tasks/h1_2_functions.cc
@@ -90,7 +92,7 @@ tasks/h1_2_functions.h
 ## 5) Re-configure build and Run MuJoCo MPC
 
 Launch the MuJoCo MPC binary (GUI or CLI as provided by the project).
-Then **select the `h1_2_walk2` task** from the task list (or via the project’s
+Then **select the `h1_2_walk` task** from the task list (or via the project’s
 `--task` flag).
 
 
