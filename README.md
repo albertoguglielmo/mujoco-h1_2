@@ -1,14 +1,14 @@
-# H1_2 Walk2 — Task integration for MuJoCo MPC
+# H1_2  — Task integration for MuJoCo MPC
 
 
 https://github.com/user-attachments/assets/d5dcf97c-d1ba-455c-a610-d1f77b5e2012
 
 
-This repository provides the **`h1_2_walk2`** task to be run inside
+This repository provides the **`h1_2_walk`** task to be run inside
 [DeepMind’s MuJoCo MPC](https://github.com/google-deepmind/mujoco_mpc).
 
 Follow the steps below **in order**. After step 5 you can build and run the
-MuJoCo MPC app and select the `h1_2_walk2` task.
+MuJoCo MPC app and select the `h1_2_walk` task.
 
 ---
 
@@ -37,7 +37,7 @@ Append the following block (exactly as below), which ensures the XML and meshes
 for the task are copied into the build tree:
 
 ```cmake
-# h1_2_walk2
+# h1_2_walk
   COMMAND ${CMAKE_COMMAND} -E make_directory
           ${CMAKE_CURRENT_BINARY_DIR}/h1_2
   COMMAND ${CMAKE_COMMAND} -E copy
