@@ -1,5 +1,9 @@
 # H1_2 Walk2 — Task integration for MuJoCo MPC
 
+
+https://github.com/user-attachments/assets/d5dcf97c-d1ba-455c-a610-d1f77b5e2012
+
+
 This repository provides the **`h1_2_walk2`** task to be run inside
 [DeepMind’s MuJoCo MPC](https://github.com/google-deepmind/mujoco_mpc).
 
