@@ -13,13 +13,12 @@ MuJoCo MPC app and select the `h1_2_walk2` task.
 1. Install MuJoCo MPC by **following the official instructions**:  
    https://github.com/google-deepmind/mujoco_mpc  
    Make sure the base project builds and runs before adding this task.
-2. You need a working C++ toolchain, CMake and MuJoCo as required by that repo.
 
 ---
 
 ## 1) Copy the task folder into MuJoCo MPC
 
-Copy this repository’s `h1_2_walk2` folder into the MuJoCo MPC tasks directory:
+Copy this repository’s `h1_2_walk` folder into the MuJoCo MPC tasks directory:
 
 ---
 
