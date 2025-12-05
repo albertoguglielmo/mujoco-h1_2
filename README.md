@@ -18,7 +18,7 @@ MuJoCo MPC app and select the `h1_2_walk2` task.
 
 ## 1) Copy the task folder into MuJoCo MPC
 
-Copy this repository’s `h1_2_walk` folder into the MuJoCo MPC tasks directory:
+Copy this repository’s `h1_2` folder into the MuJoCo MPC tasks directory:
 
 ---
 
@@ -34,14 +34,14 @@ for the task are copied into the build tree:
 
 ```cmake
 # h1_2_walk2
-COMMAND ${CMAKE_COMMAND} -E make_directory
-        ${CMAKE_CURRENT_BINARY_DIR}/h1_2_walk2
-COMMAND ${CMAKE_COMMAND} -E copy
-        ${CMAKE_CURRENT_SOURCE_DIR}/h1_2_walk2/h1_2.xml
-        ${CMAKE_CURRENT_BINARY_DIR}/h1_2_walk2/h1_2.xml
-COMMAND ${CMAKE_COMMAND} -E copy_directory
-        ${CMAKE_CURRENT_SOURCE_DIR}/h1_2_walk2/meshes
-        ${CMAKE_CURRENT_BINARY_DIR}/h1_2_walk2/meshes
+  COMMAND ${CMAKE_COMMAND} -E make_directory
+          ${CMAKE_CURRENT_BINARY_DIR}/h1_2
+  COMMAND ${CMAKE_COMMAND} -E copy
+          ${CMAKE_CURRENT_SOURCE_DIR}/h1_2/h1_2_walk.xml
+          ${CMAKE_CURRENT_BINARY_DIR}/h1_2/h1_2_walk.xml
+  COMMAND ${CMAKE_COMMAND} -E copy_directory
+          ${CMAKE_CURRENT_SOURCE_DIR}/h1_2/meshes
+          ${CMAKE_CURRENT_BINARY_DIR}/h1_2/meshes
 
 ## 3) Register the task in `tasks.cc`
 
