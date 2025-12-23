@@ -127,7 +127,7 @@ bool record_joint = true;
 bool record_data = true;
 bool integrated_view = true;
 bool record_point_cloud = true;
-
+```
 ---
 
 ## 📄 Thesis Reference
