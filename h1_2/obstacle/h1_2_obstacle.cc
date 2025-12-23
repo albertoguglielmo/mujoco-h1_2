@@ -12,7 +12,6 @@
 
 #include "mjpc/task.h"
 #include "mjpc/utilities.h"
-//#include "mjpc/tasks/humanoid_bench/walk_reward.h"
 #include "mujoco/mujoco.h"
 
 #include "mjpc/tasks/h1_2_functions.h"
@@ -28,30 +27,28 @@ std::string H1_2_obstacle_Task::XmlPath() const {
 }
 std::string H1_2_obstacle_Task::Name() const { return "h1_2_obstacle"; }
 
-
-
 // ------------------ Residuals for humanoid walk task ------------
 //   Number of residuals:
-//      Residual(0): 1 - humanoid_bench reward
-//      Residual(1): torso height
-//      Residual(2): pelvis-feet alignment
-//      Residual(3): balance
-//      Residual(4): upright
-//      Residual(5): posture
-//      Residual(6): face direction
-//      Residual(7): walk
-//      Residual(8): velocity
-//      Residual(9): control
-//      Residual(10): feet distance
-//      Residual(11): foot clearance
-//      Number of parameters:
+//      Residual(0): torso height
+//      Residual(1): pelvis-feet alignment
+//      Residual(2): balance
+//      Residual(3): upright
+//      Residual(4): posture
+//      Residual(5): face direction
+//      Residual(6): walk
+//      Residual(7): velocity
+//      Residual(8): control
+//      Residual(9): foot clearance
+//      Residual(10): feet distance (3D)
+//      Residual(11): goal distance
+//   Number of parameters:
 //      Parameter(0): torso height goal
-//      Parameter(1): speed_goal
-//      Parameter(2): direction_goal
-//      Parameter(3): feet_distance_goal
-//      Parameter(4): desired_clearance
-
+//      Parameter(1): speed goal
+//      Parameter(2): direction goal (in degrees)
+//      Parameter(3): feet distance goal
+//      Parameter(4): clearance goal
 // ----------------------------------------------------------------
+
 void H1_2_obstacle_Task::ResidualFn::Residual(const mjModel *model, const mjData *data,
                                 double *residual) const {
 
