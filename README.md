@@ -128,4 +128,37 @@ bool record_data = true;
 bool integrated_view = true;
 bool record_point_cloud = true;
 
+---
+
+## 📄 Thesis Reference
+
+This work is part of the research conducted in the Master's Thesis:
+
+**Whole-Body Nonlinear Model Predictive Control for Humanoid Locomotion and Obstacle Negotiation**
+
+📘 **Full Thesis PDF:**  
+[Alberto_Guglielmo_master_thesis.pdf](Alberto_Guglielmo_master_thesis.pdf)
+
+### 🔍 Abstract
+This thesis investigates the design of a whole-body Nonlinear Model
+Predictive Control (NMPC) framework for the Unitree H1-2 humanoid
+robot, with the goal of enabling stable locomotion and obstacle negotiation in challenging and realistic environments.
+The study begins with an analysis of modern control and optimisation techniques for non-linear, high-dimensional robotic systems,
+leading to the adoption of MuJoCo MPC (MJPC) as the most suitable
+platform for model-based control.
+Among the available optimisation technique, the iterative Linear
+Quadratic Gaussian (iLQG) method demonstrated superior stability,
+robustness and repeatability in locomotion tasks.
+In MuJoCo, a detailed simulation model of the robot was implemented, including position-controlled actuators and a set of proprioceptive and exteroceptive sensors. Among these, a LiDAR-inspired
+perception system was integrated to enable environment reconstruction and support task execution.
+Custom cost terms were designed to shape locomotion behaviour,
+regulate posture and balance, and manage interaction with the environment. These components were then extended to implement obstacleovercoming strategies and integrated into a unified framework in which
+visual perception triggers transitions between locomotion and obstacle
+negotiation modes.
+The experimental results show that the proposed NMPC controller
+achieves stable walking, reliable clearance of obstacles up to 30 cm,
+and robust operation on uneven terrain. The findings highlight the
+potential of whole-body NMPC for humanoid control and outline the
+computational conditions required for future deployment on the real
+hardware.
 
