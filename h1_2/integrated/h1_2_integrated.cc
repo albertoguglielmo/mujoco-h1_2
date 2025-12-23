@@ -33,7 +33,7 @@ std::string H1_2_integrated_Task::Name() const { return "h1_2_integrated"; }
 
 
 
-// ------------------ Residuals for humanoid walking and obstacle negotiation ------------
+// ------------------ Residuals for humanoid walk integrated task ------------
 //   Number of residuals:
 //      Residual(0): torso height
 //      Residual(1): pelvis-feet alignment
@@ -50,8 +50,9 @@ std::string H1_2_integrated_Task::Name() const { return "h1_2_integrated"; }
 //   Number of parameters:
 //      Parameter(0): torso height goal
 //      Parameter(1): speed goal
-//      Parameter(2): feet distance goal
-//      Parameter(3): clearance goal
+//      Parameter(2): direction goal (in degrees)
+//      Parameter(3): feet distance goal
+//      Parameter(4): clearance goal
 // ----------------------------------------------------------------
 
 void H1_2_integrated_Task::ResidualFn::Residual(const mjModel *model, const mjData *data,
@@ -235,10 +236,7 @@ void H1_2_integrated_Task::ResidualFn::Residual(const mjModel *model, const mjDa
     double dz = goal[2] - right_hand[2];
     double distance = sqrt(dy*dy + dz*dz);
     residual[counter++] = distance;
-
-
-
-
+    
 
   // sensor dim sanity check
   // TODO: use this pattern everywhere and make this a utility function
