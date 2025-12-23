@@ -12,7 +12,6 @@
 
 #include "mjpc/task.h"
 #include "mjpc/utilities.h"
-//#include "mjpc/tasks/humanoid_bench/walk_reward.h"
 #include "mujoco/mujoco.h"
 
 #include "mjpc/tasks/h1_2_functions.h"
