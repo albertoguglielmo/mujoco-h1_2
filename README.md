@@ -99,4 +99,33 @@ Launch the MuJoCo MPC binary (GUI or CLI as provided by the project).
 Then **select the `h1_2_walk` task** from the task list (or via the project’s
 `--task` flag).
 
+---
+
+## ⚠️ Important Note — Core File Modifications
+
+This task introduces several **non-destructive additions** to the original MuJoCo MPC source files.  
+No existing functionality was removed; all modifications only **extend** the framework.
+
+These additions were required to:
+- Enable **obstacle detection and visualization** in the integrated task  
+- Allow **recording and saving monitoring data**
+- **Automatically start the planner** when the task is activated  
+  (needed for experiments when the GUI is disabled)
+
+### Modified Source Files
+The following MuJoCo MPC files contain added logic:
+- `simulate.cc`
+- `main.cc`
+- `agent.cc`
+
+### Configuration in `simulate.cc`
+In particular, these options can be configured inside `simulate.cc`
+around **lines 625–628**:
+
+```cpp
+bool record_joint = true;
+bool record_data = true;
+bool integrated_view = true;
+bool record_point_cloud = true;
+
 
