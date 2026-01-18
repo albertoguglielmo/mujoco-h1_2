@@ -16,7 +16,6 @@
 # built binary.
 
 # Unitree H1-2 (usa percorso locale fisso)
-set(H12_LOCAL_DIR "/home/alberto-guglielmo/mujoco_mpc/mjpc/tasks/humanoid_bench/h1_2")
 
 
 add_custom_target(
@@ -37,15 +36,6 @@ add_custom_target(
           ${CMAKE_CURRENT_BINARY_DIR}/cartpole/cartpole.xml
           <${CMAKE_CURRENT_SOURCE_DIR}/cartpole/cartpole.xml.patch
 
-# h1
-#  COMMAND ${CMAKE_COMMAND} -E make_directory
-#          ${CMAKE_CURRENT_BINARY_DIR}/h1
-#  COMMAND ${CMAKE_COMMAND} -E copy
-#          ${CMAKE_CURRENT_SOURCE_DIR}/h1/h1.xml
-#          ${CMAKE_CURRENT_BINARY_DIR}/h1/h1.xml
-#  COMMAND ${CMAKE_COMMAND} -E copy_directory
-#          ${CMAKE_CURRENT_SOURCE_DIR}/h1/assets
-#          ${CMAKE_CURRENT_BINARY_DIR}/h1/assets
 
 # h1_2
   COMMAND ${CMAKE_COMMAND} -E make_directory
@@ -56,66 +46,6 @@ add_custom_target(
   COMMAND ${CMAKE_COMMAND} -E copy_directory
           ${CMAKE_CURRENT_SOURCE_DIR}/h1_2/meshes
           ${CMAKE_CURRENT_BINARY_DIR}/h1_2/meshes
-
-# h1_2_walk
-#  COMMAND ${CMAKE_COMMAND} -E make_directory
-#          ${CMAKE_CURRENT_BINARY_DIR}/h1_2_walk
-#  COMMAND ${CMAKE_COMMAND} -E copy
-#          ${CMAKE_CURRENT_SOURCE_DIR}/h1_2_walk/h1_2.xml
-#          ${CMAKE_CURRENT_BINARY_DIR}/h1_2_walk/h1_2.xml
-#  COMMAND ${CMAKE_COMMAND} -E copy_directory
-#          ${CMAKE_CURRENT_SOURCE_DIR}/h1_2_walk/meshes
-#          ${CMAKE_CURRENT_BINARY_DIR}/h1_2_walk/meshes
-
-# h1_2_walk2
-#  COMMAND ${CMAKE_COMMAND} -E make_directory
-#          ${CMAKE_CURRENT_BINARY_DIR}/h1_2_walk2
-#  COMMAND ${CMAKE_COMMAND} -E copy
-#          ${CMAKE_CURRENT_SOURCE_DIR}/h1_2_walk2/h1_2.xml
-#          ${CMAKE_CURRENT_BINARY_DIR}/h1_2_walk2/h1_2.xml
-#  COMMAND ${CMAKE_COMMAND} -E copy_directory
-#          ${CMAKE_CURRENT_SOURCE_DIR}/h1_2_walk2/meshes
-#         ${CMAKE_CURRENT_BINARY_DIR}/h1_2_walk2/meshes
-
-# h1_2_obstacle
-#  COMMAND ${CMAKE_COMMAND} -E make_directory
-#         ${CMAKE_CURRENT_BINARY_DIR}/h1_2_obstacle
-#  COMMAND ${CMAKE_COMMAND} -E copy
-#          ${CMAKE_CURRENT_SOURCE_DIR}/h1_2_obstacle/h1_2.xml
-#          ${CMAKE_CURRENT_BINARY_DIR}/h1_2_obstacle/h1_2.xml
-#  COMMAND ${CMAKE_COMMAND} -E copy_directory
-#          ${CMAKE_CURRENT_SOURCE_DIR}/h1_2_obstacle/meshes
-#          ${CMAKE_CURRENT_BINARY_DIR}/h1_2_obstacle/meshes
-
-# h1_2_integrated
-#  COMMAND ${CMAKE_COMMAND} -E make_directory
-#          ${CMAKE_CURRENT_BINARY_DIR}/h1_2_integrated
-#  COMMAND ${CMAKE_COMMAND} -E copy
-#            ${CMAKE_CURRENT_SOURCE_DIR}/h1_2_integrated/h1_2.xml
-#          ${CMAKE_CURRENT_BINARY_DIR}/h1_2_integrated/h1_2.xml
-#  COMMAND ${CMAKE_COMMAND} -E copy_directory
-#          ${CMAKE_CURRENT_SOURCE_DIR}/h1_2_integrated/meshes
-#          ${CMAKE_CURRENT_BINARY_DIR}/h1_2_integrated/meshes
-
-
-# Unitree H1 bench
-#COMMAND ${CMAKE_COMMAND} -E copy_directory
-#        ${menagerie_SOURCE_DIR}/unitree_h1/assets
-#        ${CMAKE_CURRENT_BINARY_DIR}/humanoid_bench/h1
-#COMMAND ${CMAKE_COMMAND} -E copy
-#        ${menagerie_SOURCE_DIR}/unitree_h1/h1.xml
-#        ${CMAKE_CURRENT_BINARY_DIR}/humanoid_bench/h1/h1.xml
-
-# Unitree H1_2 bench
-#COMMAND ${CMAKE_COMMAND} -E copy_directory
-#   ${H12_LOCAL_DIR}/meshes
-#       ${CMAKE_CURRENT_BINARY_DIR}/humanoid_bench/h1_2
-
-#COMMAND ${CMAKE_COMMAND} -E copy
-  #      ${H12_LOCAL_DIR}/h1_2_handless.xml
- #       ${CMAKE_CURRENT_BINARY_DIR}/humanoid_bench/h1_2/h1_2.xml
-
-#COMMENT "Copying local Unitree H1-2 assets into binary directory"
 
 
 
